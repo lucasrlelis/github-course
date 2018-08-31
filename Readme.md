@@ -49,3 +49,19 @@
     * *git checkout <branch name>* (**eg** git checkout testing | git checkout master)
 * To delete a branch:
     * git branch -D <branch name>
+
+#### Merge
+* Merges branches, such as testing + master.
+* **Pros**:
+    * Non destructive operation.
+* **Cons**:
+    * Requires extra commits.
+    * Pollutes repository history (specially if there are several branches).
+
+#### Rebase
+* Moves commits to the end of a branch (easier to understand seeing an image).
+* **Pros**:
+    * Avoids extra commits.
+    * Keeps a linear repository history.
+* **Cons**:
+    * Loses chronological order.
