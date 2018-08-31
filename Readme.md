@@ -1,19 +1,27 @@
 # Git & Github
 
 ## File Status Lifecycle
-* Untracked -> criado mas ainda não visto pelo git.
-* Unmodified -> depois que é adicionado no git.
-* Modified -> se você editar.
-* Staged -> arquivo na área onde vai ser criada a versão.
-    * Quando é feito o commit, esses arquivos Staged voltam a ser Unmodified (nada foi modificado desde a última versão criada).
+* **Untracked** -> file was created but is not tracked by git.
+* **Unmodified** -> after a file is added/updated on git.
+* **Modified** -> after editing the file.
+* **Staged** -> ready for updating git with the current file version.
+    * When the *commit* is made, the "Staged" files go back to being in and "Unmodified" status.
 
-## Comandos
-* git status -> vê o status dos arquivos
-* git diff -> vê a diferença entre as versões
-* git reset HEAD <file> -> tira o arquivo da fila do Stage.
-* git checkout <file> -> remove toda a mudança, antes do commit.
-* Para voltar a versão:
-    * git reset --soft --mixed --hard
-        * --soft -> Desfaz as modificações mas deixa o arquivo no Staged pronto pra fazer o commit de novo.
-        * --mixed -> Desfaz as modificações e retorna o arquivo pra Modified (tira do Staged)
-        * --hard -> desfaz as modificações e ignora tudo o que foi feito nele.
+## Commands
+### Basic Commands
+* *git status* -> vê o status dos arquivos
+* *git diff* -> vê a diferença entre as versões
+* *git reset HEAD <file>* -> tira o arquivo da fila do Stage.
+* *git checkout <file>* -> remove toda a mudança, antes do commit.
+### Resetting
+* To reset to a previous version:
+    * *git reset --soft --mixed --hard*
+        * *--soft* -> To undo previous modifications to a file, but keeping that file as Staged, ready to commit again.
+        * *--mixed* -> To undo previous modifications, but returning that file to a Modified status (removes Staged status)
+        * *--hard* -> To undo previous modifications and ignore everything.
+### Cloning a Repository
+1. Copy a repository SSH address.
+1. In Terminal/Bash: *git clone <SSH link> <local repository name>*
+
+### Forking a Repository
+* Useful for copying a repo made by someone else to work on it, and then send the changes back.
