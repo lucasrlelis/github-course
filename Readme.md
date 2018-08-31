@@ -7,3 +7,5 @@
     Staged -> arquivo na área onde vai ser criada a versão.
 
     Quando é feito o commit, esses arquivos Staged voltam a ser Unmodified (nada foi modificado desde a última versão criada).
+
+Aprendendo sobre Git.
