@@ -17,12 +17,21 @@
     * git commit -am "Message" -> adds Staged status to file + commits with a message.
 * *git reset HEAD <file>* -> removes Staged status from file.
 * *git checkout <file>* -> Removes all modifications (only before committing, otherwise you have to reset).
+* **git stash** -> "stores" modifications to commit later (used to save a work in progress without comitting).
+    * Commits with *git stash apply*
+    * Used to keep a clean log, avoiding several small commits.
+
 ### Resetting
 * To reset to a previous version:
     * *git reset --soft --mixed --hard*
         * *--soft* -> To undo previous modifications to a file, but keeping that file as Staged, ready to commit again.
         * *--mixed* -> To undo previous modifications, but returning that file to a Modified status (removes Staged status)
         * *--hard* -> To undo previous modifications and ignore everything.
+
+### Reverting
+* Reverts to a previous file version, but keeps that information on Git.
+* If something goes wrong, you can use *git revert* to go back, and at a later time you can *checkout* on that commit to look into that code.
+
 ### Cloning a Repository
 1. Copy a repository SSH address.
 1. In Terminal/Bash: *git clone <SSH link> <local repository name>*
@@ -66,6 +75,22 @@
 * **Cons**:
     * Loses chronological order.
 
-## .gitignore
+### .gitignore
 * Used to make git ignore some files.
 * Create a .gitignore file and specify in the file which files or file types should be ignored (eg *.json or <name>.<extension>).
+
+### Tags
+* You can use tags to create versions with git.
+* *git tag -a 1.0.0 -m "Version 1.0.0: Readme done"*
+    * -a: annotates
+    * -m: message
+* You can push tags to Github with *git push origin master --tags*
+
+### Deleting Tags and Branches in Remote Repositories
+* *git tag -d 1.0.0* - deletes tag 1.0.0 at the local repo.
+* *git push origin :1.0.0* - pushes that deletion to the remote repo.
+
+### Alias
+* Create shortcut to commands.
+* *git config --global alias.<shortcut> command*
+    * Eg: *git config --global alias.s status* ('s' will work as a shortcut to status)
