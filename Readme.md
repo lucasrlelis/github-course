@@ -65,3 +65,7 @@
     * Keeps a linear repository history.
 * **Cons**:
     * Loses chronological order.
+
+## .gitignore
+* Used to make git ignore some files.
+* Create a .gitignore file and specify in the file which files or file types should be ignored (eg *.json or <name>.<extension>).
